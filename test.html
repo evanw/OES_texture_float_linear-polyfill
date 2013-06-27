@@ -1,5 +1,21 @@
+<style>
+body { font: 14px sans-serif; margin: 20px; }
+</style>
+<h1>OES_texture_float_linear Polyfill</h1>
+<script>
+
+var originalGetExtension = WebGLRenderingContext.prototype.getExtension;
+
+</script>
 <script src="OES_texture_float_linear-polyfill.js"></script>
 <script>
+
+function checkExtension(name) {
+  document.write('<br>');
+  document.write('<b>' + name + '</b><br>');
+  document.write('browser: ' + (!!gl && !!originalGetExtension.call(gl, name)) + '<br>');
+  document.write('polyfill: ' + (!!gl && !!gl.getExtension(name)) + '<br>');
+}
 
 try {
   var gl = document.createElement('canvas').getContext('experimental-webgl');
@@ -7,7 +23,7 @@ try {
 }
 
 document.write('WebGL: ' + !!gl + '<br>');
-document.write('OES_texture_float: ' + !!gl.getExtension('OES_texture_float') + '<br>');
-document.write('OES_texture_float_linear: ' + !!gl.getExtension('OES_texture_float_linear') + '<br>');
+checkExtension('OES_texture_float');
+checkExtension('OES_texture_float_linear');
 
 </script>
