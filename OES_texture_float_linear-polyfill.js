@@ -96,13 +96,13 @@
   // This replaces the real getExtension()
   function getExtension(name) {
     return name === 'OES_texture_float_linear'
-      ? getOESTextureFloatLinear(gl)
-      : oldGetExtension.call(gl, name);
+      ? getOESTextureFloatLinear(this)
+      : oldGetExtension.call(this, name);
   }
 
   // This replaces the real getSupportedExtensions()
   function getSupportedExtensions() {
-    var extensions = oldGetSupportedExtensions.call(gl);
+    var extensions = oldGetSupportedExtensions.call(this);
     if (extensions.indexOf('OES_texture_float_linear') === -1) {
       extensions.push('OES_texture_float_linear');
     }
