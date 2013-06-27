@@ -1,0 +1,8 @@
+<script src="OES_texture_float_linear-polyfill.js"></script>
+<script>
+
+var gl = document.createElement('canvas').getContext('experimental-webgl');
+document.write('OES_texture_float: ' + !!gl.getExtension('OES_texture_float') + '<br>');
+document.write('OES_texture_float_linear: ' + !!gl.getExtension('OES_texture_float_linear') + '<br>');
+
+</script>
