@@ -1,6 +1,6 @@
 # OES_texture_float_linear Polyfill
 
-This is a polyfill for the WebGL extension OES_texture_float_linear.
+This is a polyfill for the WebGL extension OES_texture_float_linear. Try the [live demo](http://evanw.github.io/OES_texture_float_linear-polyfill/test.html) to see if the polyfill works for your browser.
 
 OES_texture_float_linear was created to fix a mistake in the implementation of OES_texture_float. Although the spec for OES_texture_float requires that floating-point textures with linear filtering be marked as incomplete, the implementation of OES_texture_float in both Chrome and Firefox allowed linear filtering on floating-point textures. This caused apps that used linear filtering and floating-point textures to break on some mobile platforms that support floating-point textures but not linear filtering.
 
